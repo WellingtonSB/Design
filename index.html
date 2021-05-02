@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Teste</title>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <!-- Entrar -->
+            <div class="user singinBx">
+                <div class="imgBx"><img src="edBank.png"></div>
+                <div class="formBx">
+                    <form>
+                        <h2>Entrar</h2>
+                        <input [(ngModel)]='userLogin.usuario' type="text" name="" placeholder="Usuario">
+                        <input [(ngModel)]='userLogin.senha' type="password" name="" placeholder="Senha">
+                        <input (click)='entrar()' type="submit" name="" value="Entrar">
+                        <p class="signup">Não tem uma conta?<a href="#" onclick="toggleForm();">Cadastre-se</a></p>
+                    </form>
+                </div>
+            </div>
+            <!-- Cadastro -->
+            <div class="user singupBx">
+                <div class="formBx">
+                    <form>
+                        <h2>Criar conta</h2>
+                        <input [(ngModel)]='user.nome' type="text" name="" placeholder="Usuario">
+                        <input [(ngModel)]='user.usuario' type="email" name="" placeholder="Endereço de email">
+                        <input (input)='confirmSenha($event)' type="password" name="" placeholder="Senha">
+                        <input [(ngModel)]='user.senha' type="password" name="" placeholder="Confirme sua senha">
+                        <input  (click)='cadastrar()' type="submit" name="" value="Cadastrar">
+                        <p class="signup">Já tem uma conta?<a href="#" onclick="toggleForm();">Entre</a></p>
+                    </form>
+                </div>
+                <div class="imgBx"><img src="entrar2.jpeg"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <script type="text/javascript">
+        function toggleForm() {
+            var container = document.querySelector('.container');
+            container.classList.toggle('active')
+        }
+    </script>
+</body>
+
+</html>
